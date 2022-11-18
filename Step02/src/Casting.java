@@ -16,10 +16,38 @@ public class Casting {
 	 * 
 	 */
 	public static void main(String[] args) {
+		//자동으로 형변환 되는 경우
+		int n = 120;
+		double d = n; // int형인 n을 double로 형변환해서 d에 저장
+		System.out.println(d);
+		long l = n; // int형인 n을 long으로 형변환해서 l에 저장
+		System.out.println(l);
+		
+		System.out.println(3.1415 / 2); // 2는 double로 형변환 됨
+		System.out.println('A' + 1);
+		
+		//강제로 형변환 하는 방법  -->   (형변환할 변수타입) 값 or 변수
+		double pi = -3.1415;
+		int i = (int)pi; //소수점 부분이 사라짐, double 타입인 pi를 int형으로 변경 후 저장
+		System.out.println(i);
+		
+		int t = 65;
+		char ch = (char)t;
+		System.out.println(ch);
+		System.out.println((char)t);
+		System.out.println((int)ch);
+		
+//		double result = 3 + 3.1415f;
+		double result = 3 + 3.1415;
+		System.out.println(result);
 		
 	}
 
 }
+
+
+
+
 
 
 
