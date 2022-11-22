@@ -14,7 +14,7 @@ public class BreakEx2 {
 			if(num == 0) 
 				break;
 			
-			sum = num;	
+			sum += num;	
 		}
 		System.out.println(sum);
 		
