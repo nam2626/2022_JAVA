@@ -16,6 +16,20 @@ public class PersonMain {
 		p2.age = 33;
 		p2.gender = false;
 		p2.printPersonInfo();
+		
+		Person p3 = new Person();
+		p3.init("이영희", 50, false);
+		p3.printPersonInfo();
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
