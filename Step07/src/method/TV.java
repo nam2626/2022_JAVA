@@ -44,6 +44,35 @@ public class TV {
 		if(ch < 1) ch = 456;
 		System.out.println("현재 채널 : " + ch);
 	}
+	
+	//음소거,음소거(boolean) - true : 음소거, false : 해제
+	void muteOnOff() {
+		if(!power) return;
+		
+		mute = !mute;
+		
+		if(mute) 
+			System.out.println("음소거 활성화");
+		else 
+			System.out.println("음소거 비활성화");
+	}
+	//음량Up, 음량(int) - 0 ~ 40
+	void volUp() {
+		if(!power) return;
+		if(mute) muteOnOff();
+		
+		if(vol < 40) vol++;
+		System.out.println("현재 음량 : "+vol);
+	}
+	//음량Down
+	void volDown() {
+		if(!power) return;
+		if(mute) muteOnOff();
+		
+		if(vol > 0) vol--;
+		System.out.println("현재 음량 : "+vol);
+	}
+	
 }
 
 

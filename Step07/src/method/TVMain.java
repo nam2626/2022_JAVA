@@ -10,6 +10,11 @@ public class TVMain {
 		
 		for(int i=0;i<500;i++)
 			tv.chUp();
+		
+		for(int i=0;i<50;i++)
+			tv.volUp();
+		for(int i=0;i<50;i++)
+			tv.volDown();
 	}
 
 }
