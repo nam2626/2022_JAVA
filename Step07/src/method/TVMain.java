@@ -7,9 +7,9 @@ public class TVMain {
 		tv.init();
 		
 		tv.powerOnOff();
-		tv.powerOnOff();
-		tv.powerOnOff();
-		tv.powerOnOff();
+		
+		for(int i=0;i<500;i++)
+			tv.chUp();
 	}
 
 }

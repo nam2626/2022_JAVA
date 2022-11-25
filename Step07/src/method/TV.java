@@ -27,7 +27,32 @@ public class TV {
 		}
 	}
 	
+	//채널Up : 채널값을 하나만 올리면 됨, 올린 후에 (현재 채널 : XX) <-- 출력
+	//채널(int) - 1 ~ 456
+	void chUp() {
+		if(!power)
+			return;//메서드 강제 종료
+		ch %= 456;
+		ch++;
+		System.out.println("현재 채널 : " + ch);
+	}
+	
+	void chDown() {
+		if(!power) return;
+		
+		ch--;
+		if(ch < 1) ch = 456;
+		System.out.println("현재 채널 : " + ch);
+	}
 }
+
+
+
+
+
+
+
+
 
 
 
