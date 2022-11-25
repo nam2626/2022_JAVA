@@ -18,12 +18,12 @@ public class TV {
 	//전원 켜져 있으면 끄기, 전원이 꺼져있으면 켜기
 	//TV전원 On, TV전원 Off
 	void powerOnOff() {
+		power = !power;
+		
 		if(power) {
-			power = false;
-			System.out.println("TV 전원 Off");
-		}else {
-			power = true;
 			System.out.println("TV 전원 On");
+		}else {
+			System.out.println("TV 전원 Off");
 		}
 	}
 	
