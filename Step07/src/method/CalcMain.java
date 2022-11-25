@@ -12,6 +12,8 @@ public class CalcMain {
 		System.out.println(cal.minus());
 		System.out.println(cal.multiple());
 		System.out.println(cal.divisor());
+		System.out.println(cal.max(10, 20));
+		System.out.println(cal.min(10, 20));
 	}
 
 }
