@@ -8,7 +8,7 @@ public class ClassArrayTest {
 		Student[] std = new Student[10];
 		System.out.println(arr[0]);
 		System.out.println(std[0]);
-		
+		System.out.println(10 > 5 ? "A":"B");
 		System.out.println("프로그램 종료");
 	}
 
