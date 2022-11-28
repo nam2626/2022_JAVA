@@ -32,8 +32,10 @@ public class StudentMain {
 				service.searchStudentInfo(sc);
 				break;
 			case 4:
+				service.deleteStudentVO(sc);
 				break;
 			case 5:
+				service.updateStudentVO(sc);
 				break;
 			case 0:
 				System.out.println("프로그램을 종료합니다.");

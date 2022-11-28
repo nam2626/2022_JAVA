@@ -72,12 +72,51 @@ public class StudentService {
 		System.out.println("입력하신 학생번호에 해당하는 학생은 없습니다.");
 		return -1;
 	}
-	
+
 	//학생정보 삭제
-	
+	public void deleteStudentVO(Scanner sc) {
+		System.out.println("학생 정보 삭제를 시작합니다......");
+		int r = searchStudentInfo(sc); //삭제할 학생 정보가 위치한 배열 인덱스 결과값을 받음
+		//검색한 결과가 없는 경우 -1을 받음
+		if(r == -1) return;
+		
+		//-1이아니면 삭제할 데이터가 있다라고 판단 후 삭제 작업을 수행
+		for(int i=r;i<idx-1;i++) {
+			arr[i] = arr[i+1];
+		}
+		//삭제 완료 후 인덱스값을 1 감소;
+		idx--;
+		System.out.println("삭제 작업이 정상적으로 이루어 졌습니다.");
+	}
+
 	//학생정보 수정
+	public void updateStudentVO(Scanner sc) {
+		System.out.println("학생 정보 수정을 시작합니다........");
+		int r = searchStudentInfo(sc);//수정할 학생 정보를 검색
+		if(r == -1) return; //수정할 정보가 없으면 메서드 종료
+		
+		System.out.print("수정할 학생이름 : ");
+		String studentName=sc.nextLine();
+		System.out.print("수정할 학과명 : ");
+		String majorName=sc.nextLine();
+		System.out.print("수정할 평점 : ");
+		double score=sc.nextDouble(); sc.nextLine();
+		
+		//입력 받은 데이터를 set 메서드 이용해서 수정
+		arr[r].setStudentName(studentName);
+		arr[r].setMajorName(majorName);
+		arr[r].setScore(score);
+		
+		System.out.println("학생 데이터 수정 완료");
+	}
 	
 }
+
+
+
+
+
+
 
 
 
