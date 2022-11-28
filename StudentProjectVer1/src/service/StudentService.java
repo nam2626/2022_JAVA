@@ -10,6 +10,13 @@ public class StudentService {
 	
 	public StudentService() {
 		arr = new StudentVO[10];
+		arr[idx] = new StudentVO("1111", "김철수", "경제학과", 3.14);
+		idx++;
+		arr[idx] = new StudentVO("2222", "이영희", "경영학과", 2.44);
+		idx++;
+		arr[idx] = new StudentVO("3333", "박영수", "컴퓨터공학과", 4.24);
+		idx++;
+		
 	}
 	
 	//학생정보 추가

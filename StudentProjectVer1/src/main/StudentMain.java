@@ -29,6 +29,7 @@ public class StudentMain {
 				service.printAllStudentInfo();
 				break;
 			case 3:
+				service.searchStudentInfo(sc);
 				break;
 			case 4:
 				break;
