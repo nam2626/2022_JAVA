@@ -26,6 +26,7 @@ public class StudentMain {
 				service.appendStudent(sc);
 				break;
 			case 2:
+				service.printAllStudentInfo();
 				break;
 			case 3:
 				break;

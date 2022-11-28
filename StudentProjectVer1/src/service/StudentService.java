@@ -35,7 +35,17 @@ public class StudentService {
 	}
 	
 	//전체 학생정보 출력
-
+	public void printAllStudentInfo() {
+		System.out.println("전체 학생 정보를 출력합니다........");
+		if(idx == 0) {
+			System.out.println("등록된 학생 정보가 하나도 없습니다.");
+			return;
+		}
+		for(int i=0;i<idx;i++)
+			System.out.println(arr[i]);
+		
+		System.out.println();
+	}
 	//학생정보 검색
 	
 	//학생정보 삭제
