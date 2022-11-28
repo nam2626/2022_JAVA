@@ -14,7 +14,7 @@ public class AirCon {
 	
 	//초기화
 	void init() {
-		mode = 24;
+		temp = 24;
 	}
 	
 	//전원OnOff
