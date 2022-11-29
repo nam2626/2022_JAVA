@@ -1,7 +1,7 @@
 package constructor;
 
 public class Animal {
-	private int age;
+	protected int age;
 
 	public Animal(int age) {
 		this.age = age;
