@@ -20,6 +20,7 @@ public class EmployeeMain {
 			
 			switch(no) {
 			case 1:
+				service.appendEmployee(sc);
 				break;
 			case 2:
 				break;
