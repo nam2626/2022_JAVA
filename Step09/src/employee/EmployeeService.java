@@ -8,6 +8,9 @@ public class EmployeeService {
 	
 	public EmployeeService() {
 		arr = new Employee[5];
+		arr[idx++] = new Employee("A0001", "홍길동", 300);
+		arr[idx++] = new SalaryEmployee("A0002", "김철수", 200, 90);
+		arr[idx++] = new DispatchEmployee("A0003", "박영수", 400,'A');
 	}
 
 	public void appendEmployee(Scanner sc) {
@@ -46,6 +49,19 @@ public class EmployeeService {
 		}
 		idx++;
 		System.out.println("사원 정보 등록 완료");		
+	}
+
+	public void printAllEmployee() {
+		System.out.println("전체 사원 정보를 출력합니다.............");
+		if(idx == 0) {
+			System.out.println("저장된 정보가 없습니다.");
+			return;
+		}
+		
+		for(int i=0;i<idx;i++) {
+			arr[i].printEmployeeInfo();
+		}
+		System.out.println();
 	}
 	
 	

@@ -23,6 +23,7 @@ public class EmployeeMain {
 				service.appendEmployee(sc);
 				break;
 			case 2:
+				service.printAllEmployee();
 				break;
 			case 3:
 				break;
