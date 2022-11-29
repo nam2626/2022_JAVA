@@ -1,7 +1,7 @@
 package inheritance_01;
 
 public class Animal {
-	private int age;
+	protected int age;
 
 	public Animal() {
 		System.out.println("Animal 생성자");
