@@ -1,7 +1,7 @@
 package has_a_2;
 
 public class Gun {
-	private int bullet;
+	protected int bullet;
 
 	public Gun() {
 		bullet = 12;

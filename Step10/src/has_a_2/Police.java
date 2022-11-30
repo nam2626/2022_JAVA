@@ -1,18 +1,20 @@
 package has_a_2;
 
-public class Police extends Gun{
+public class Police{
 	private int handcuffs;
+	private Gun gun; 
 	
-	public Police() {
+	public Police(Gun gun) {
 		handcuffs = 3;
+		this.gun = gun;
 	}
 	
 	public void shot() {
-		super.shot();
+		gun.shot();
 	}
 
 	public void reload() {
-		super.reload();
+		gun.reload();
 	}
 
 	public void userHandcuffs(){
