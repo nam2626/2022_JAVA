@@ -25,6 +25,22 @@ public class Employee {
 		this.employeeNo = employeeNo;
 	}
 
+	public String getEmployeeName() {
+		return employeeName;
+	}
+
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+
 	public int calcSalary() {
 		return salary;
 	}

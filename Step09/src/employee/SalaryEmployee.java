@@ -1,10 +1,18 @@
 package employee;
 
 public class SalaryEmployee extends Employee{
+
 	private int bonus;
 
 	public SalaryEmployee(String employeeNo, String employeeName, int salary, int bonus) {
 		super(employeeNo, employeeName, salary);
+		this.bonus = bonus;
+	}
+	public int getBonus() {
+		return bonus;
+	}
+	
+	public void setBonus(int bonus) {
 		this.bonus = bonus;
 	}
 	

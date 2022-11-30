@@ -8,6 +8,14 @@ public class DispatchEmployee extends Employee {
 		this.grade = grade;
 	}
 	
+	public char getGrade() {
+		return grade;
+	}
+
+	public void setGrade(char grade) {
+		this.grade = grade;
+	}
+
 	@Override
 	public int calcSalary() {
 		double ratio = 0.08;

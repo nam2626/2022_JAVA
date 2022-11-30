@@ -11,8 +11,8 @@ public class TestMain {
 		System.out.println(p instanceof Animal);
 		
 		//클래스 이름 뽑아서 처리
+		System.out.println(a.getClass().getName());
 		System.out.println(p.getClass().getName());
-		System.out.println(p.getClass().getTypeName());
 		System.out.println(p.getClass().getSimpleName());
 		System.out.println(Person.class.getName());
 	}

@@ -96,6 +96,32 @@ public class EmployeeService {
 		System.out.println("사원정보 삭제 성공.");
 	}
 
+	public void updateEmployee(Scanner sc) {
+		System.out.println("사원정보 수정작업을 시작합니다........");
+		int r = searchEmployee(sc);
+		if(r == -1) {
+			System.out.println("수정할 사원 정보가 없습니다.");
+			return;
+		}
+		
+		System.out.print("수정할 사원명 : ");
+		arr[r].setEmployeeName(sc.nextLine());
+		System.out.print("수정할 기본급 : ");
+		arr[r].setSalary(sc.nextInt()); sc.nextLine();
+		
+		//instanceof를 사용경우
+		if(arr[r] instanceof DispatchEmployee) {
+			System.out.print("수정할 파견지 등급 입력(A,B,C) : ");
+			((DispatchEmployee)arr[r]).setGrade(sc.nextLine().charAt(0));
+		}else if(arr[r] instanceof SalaryEmployee) {
+			System.out.print("수정할 인센티브 입력 : ");
+			((SalaryEmployee)arr[r]).setBonus(sc.nextInt()); sc.nextLine();
+		}
+		//Class의 getName 이용하는 방법
+		
+		System.out.println("사원 정보 수정이 끝났습니다.");
+	}
+
 }
 
 
