@@ -29,6 +29,7 @@ public class EmployeeMain {
 				service.searchEmployee(sc);
 				break;
 			case 4:
+				service.deleteEmployee(sc);
 				break;
 			case 0:
 				System.out.println("프로그램 종료");

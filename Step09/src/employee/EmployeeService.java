@@ -81,7 +81,19 @@ public class EmployeeService {
 	}
 	
 	public void deleteEmployee(Scanner sc) {
+		System.out.println("사원정보 삭제를 시작합니다......");
+		int d = searchEmployee(sc);//삭제할 사원정보 검색
 		
+		if(d==-1) { 
+			System.out.println("사원 정보 삭제 실패.");
+			return;
+		}
+		
+		for(int i=d;i<idx-1;i++)
+			arr[i] = arr[i+1];
+		
+		idx--;
+		System.out.println("사원정보 삭제 성공.");
 	}
 
 }
