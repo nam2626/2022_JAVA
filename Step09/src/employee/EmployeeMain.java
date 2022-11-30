@@ -26,6 +26,7 @@ public class EmployeeMain {
 				service.printAllEmployee();
 				break;
 			case 3:
+				service.searchEmployee(sc);
 				break;
 			case 4:
 				break;

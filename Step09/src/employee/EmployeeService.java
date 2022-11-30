@@ -63,8 +63,26 @@ public class EmployeeService {
 		}
 		System.out.println();
 	}
+
+	public int searchEmployee(Scanner sc) {
+		System.out.println("사원정보 검색을 시작합니다...........");
+		System.out.print("검색할 사번을 입력하세요 : ");
+		String employeeNo = sc.nextLine();
+		
+		for(int i=0;i<idx;i++) {
+			if(arr[i].getEmployeeNo().equals(employeeNo)) {
+				System.out.println("검색결과");
+				arr[i].printEmployeeInfo();
+				return i;
+			}
+		}
+		System.out.println("찾는 사원 정보가 없습니다.");
+		return -1; 
+	}
 	
-	
+	public void deleteEmployee(Scanner sc) {
+		
+	}
 
 }
 
