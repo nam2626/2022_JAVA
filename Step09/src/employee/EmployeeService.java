@@ -2,6 +2,8 @@ package employee;
 
 import java.util.Scanner;
 
+import constructor.Person;
+
 public class EmployeeService {
 	private Employee[] arr;
 	private int idx;
@@ -110,14 +112,21 @@ public class EmployeeService {
 		arr[r].setSalary(sc.nextInt()); sc.nextLine();
 		
 		//instanceof를 사용경우
-		if(arr[r] instanceof DispatchEmployee) {
+//		if(arr[r] instanceof DispatchEmployee) {
+//			System.out.print("수정할 파견지 등급 입력(A,B,C) : ");
+//			((DispatchEmployee)arr[r]).setGrade(sc.nextLine().charAt(0));
+//		}else if(arr[r] instanceof SalaryEmployee) {
+//			System.out.print("수정할 인센티브 입력 : ");
+//			((SalaryEmployee)arr[r]).setBonus(sc.nextInt()); sc.nextLine();
+//		}
+		//Class의 getName 이용하는 방법
+		if(arr[r].getClass().getName().equals(DispatchEmployee.class.getName())) {
 			System.out.print("수정할 파견지 등급 입력(A,B,C) : ");
 			((DispatchEmployee)arr[r]).setGrade(sc.nextLine().charAt(0));
-		}else if(arr[r] instanceof SalaryEmployee) {
+		}else if(arr[r].getClass().getName().equals(SalaryEmployee.class.getName())) {
 			System.out.print("수정할 인센티브 입력 : ");
 			((SalaryEmployee)arr[r]).setBonus(sc.nextInt()); sc.nextLine();
 		}
-		//Class의 getName 이용하는 방법
 		
 		System.out.println("사원 정보 수정이 끝났습니다.");
 	}
