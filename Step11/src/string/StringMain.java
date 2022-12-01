@@ -1,5 +1,6 @@
 package string;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class StringMain {
@@ -36,6 +37,19 @@ public class StringMain {
 		//문자열 바꾸기
 		System.out.println(str2.replace("World", "Hell"));
 		
+		String str3 = "       Hello World      ";
+		System.out.println(str3.length());
+		//문자열 양쪽에 필요없는 공백을 제거
+		System.out.println(str3.trim());
+		System.out.println(str3.trim().length());
+		
+		//ArrayList 생성 후 문자열 5건 추가
+		ArrayList<String> list = new ArrayList<String>();
+		list.add("Java");
+		list.add("HTML/CSS");
+		list.add("Android");
+		list.add("jsp");
+		list.add("js/jQuery");
 		
 	}
 
