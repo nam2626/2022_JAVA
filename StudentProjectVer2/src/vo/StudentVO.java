@@ -1,12 +1,13 @@
 package vo;
 
+import java.util.Objects;
+
 public class StudentVO {
 	private String studentNo;
 	private String studentName;
 	private String majorName;
 	private double score;
 
-	//생성자 - 전체 필드 초기화
 	public StudentVO(String studentNo, String studentName, String majorName, double score) {
 		super();
 		this.studentNo = studentNo;
@@ -14,7 +15,7 @@ public class StudentVO {
 		this.majorName = majorName;
 		this.score = score;
 	}
-	//setter/getter
+
 	public String getStudentNo() {
 		return studentNo;
 	}
@@ -46,12 +47,21 @@ public class StudentVO {
 	public void setScore(double score) {
 		this.score = score;
 	}
-	//toString
+
 	@Override
 	public String toString() {
 		return "StudentVO [studentNo=" + studentNo + ", studentName=" + studentName + ", majorName=" + majorName
 				+ ", score=" + score + "]";
 	}
-	
-	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof StudentVO))
+			return false;
+		StudentVO other = (StudentVO) obj;
+		return Objects.equals(studentNo, other.studentNo);
+	}
+
 }
