@@ -12,4 +12,35 @@ public class HandlerMapping {
 		return instance;
 	}
 
+	public Controller createController(int no) {
+		Controller controller = null;
+		
+		switch(no) {
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		case 5:
+			break;
+		}
+		
+		return controller;
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
