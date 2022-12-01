@@ -29,6 +29,7 @@ public class HandlerMapping {
 			controller = new StudentDeleteController();
 			break;
 		case 5:
+			controller = new StudentUpdateController();
 			break;
 		}
 		

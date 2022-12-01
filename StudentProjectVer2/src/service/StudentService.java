@@ -10,6 +10,9 @@ public class StudentService {
 	
 	private StudentService() {
 		list = new ArrayList<StudentVO>();
+		list.add(new StudentVO("1111", "김철수", "경제학과", 3.14));
+		list.add(new StudentVO("2222", "이영희", "경영학과", 2.44));
+		list.add(new StudentVO("3333", "박영수", "컴퓨터공학과", 4.24));
 	}
 
 	public static StudentService getInstance() {
