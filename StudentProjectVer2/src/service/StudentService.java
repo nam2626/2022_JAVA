@@ -37,6 +37,13 @@ public class StudentService {
 		}
 	}
 
+	public StudentVO searchStudentVO(String studentNo) {
+		int i = list.indexOf(new StudentVO(studentNo, null, null, 0));
+		if(i != -1)
+			return list.get(i);
+		return null;
+	}
+
 }
 
 
