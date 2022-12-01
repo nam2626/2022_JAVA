@@ -2,6 +2,7 @@ package string;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class StringMain {
 
@@ -50,6 +51,21 @@ public class StringMain {
 		list.add("Android");
 		list.add("jsp");
 		list.add("js/jQuery");
+		
+		//빈 문자열
+		String str4 = "";
+		//리스트에 있는 데이터를 한건씩 s에 보내서 반복
+		for(String s : list) {
+			str4 += s +"\t";
+		}
+		str4 = str4.trim();
+		System.out.println(str4 + " " + str4.length());
+		
+		String[] arr1 = str4.split("\t");
+		System.out.println(Arrays.toString(arr1));
+		//배열을 List로 변환
+		List<String> lst = Arrays.asList(arr1);
+		System.out.println(lst);
 		
 	}
 
