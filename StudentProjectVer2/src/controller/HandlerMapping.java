@@ -23,6 +23,7 @@ public class HandlerMapping {
 			controller = new StudentPrintAllController();
 			break;
 		case 3:
+			controller = new StudentSearchController();
 			break;
 		case 4:
 			break;
