@@ -20,6 +20,7 @@ public class HandlerMapping {
 			controller = new StudentAppendController();
 			break;
 		case 2:
+			controller = new StudentPrintAllController();
 			break;
 		case 3:
 			break;

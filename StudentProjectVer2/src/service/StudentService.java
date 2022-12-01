@@ -18,6 +18,10 @@ public class StudentService {
 		return instance;
 	}
 	
+	public ArrayList<StudentVO> getList() {
+		return list;
+	}
+
 	//학생정보 추가
 	public boolean appendStudentVO(StudentVO studentVO) {
 		//받아온 학생 객체를 리스트에 추가.
