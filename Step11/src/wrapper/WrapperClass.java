@@ -26,6 +26,20 @@ public class WrapperClass {
 		//문자열을 숫자로 변환
 		System.out.println(Integer.parseInt("100") * 2);
 		System.out.println(Double.parseDouble("3.1415")+1);
+		
+		int i1 = 100;
+		//auto boxing
+		Integer i2 = i1;
+		//auto unbox
+		int i3 = i2;
+		
+		//1.5 이전버전에서의 boxing ,unboxing
+		int i4 = 100;
+		Object obj = i4;
+		Integer i5 = (Integer) obj;
+		Object val = i5;
+		int i6 = (int)val;
+		
 	}
 
 }
