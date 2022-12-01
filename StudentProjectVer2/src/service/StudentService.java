@@ -44,7 +44,14 @@ public class StudentService {
 		return null;
 	}
 
+	public boolean deleteStudentVO(StudentVO studentVO) {
+		return list.remove(studentVO);
+	}
+
 }
+
+
+
 
 
 
