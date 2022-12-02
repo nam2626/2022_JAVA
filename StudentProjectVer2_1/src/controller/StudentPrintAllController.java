@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 import service.StudentService;
@@ -16,9 +17,11 @@ public class StudentPrintAllController implements Controller {
 			System.out.println("출력할 데이터가 하나도 없습니다.");
 		else {
 			//Iterator로 처리
-			for(StudentVO vo : list) {
-				System.out.println(vo);
+			Iterator<StudentVO> it = list.iterator();
+			while(it.hasNext()) {
+				System.out.println(it.next());
 			}
+			
 		}
 
 	}
