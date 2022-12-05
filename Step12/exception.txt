@@ -1,0 +1,9 @@
+exception : 프로그램이 실행 중에 발생하는 에러
+		    실행 중에 에러 발생되면 기본적으로는 프로그램이 강제 종료가 됨
+		    프로그램이 강제 종료가 되지 않게끔, 중간에 발생하는 에러를 잡는 행위를 Exception 처리
+		    
+try : 작업영역, 대신에 이 영역에서는 Exception이 발생할 수 있다.
+catch : try 영역에서 Exception이 발생 했을때 Exception을 처리하는 영역
+finally
+throw
+throws

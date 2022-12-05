@@ -56,6 +56,7 @@ public class DateFormatMain {
 		
 		sdf.applyPattern("yyyy_MM_dd_HH_mm_ss");
 		System.out.println(sdf.format(cal.getTime()));
+		//문자열을 날짜로 바꾸는 부분
 		Date c =  sdf.parse("2022_05_05_12_48_16");
 		System.out.println(c);
 	}
