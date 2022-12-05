@@ -4,6 +4,6 @@ exception : 프로그램이 실행 중에 발생하는 에러
 		    
 try : 작업영역, 대신에 이 영역에서는 Exception이 발생할 수 있다.
 catch : try 영역에서 Exception이 발생 했을때 Exception을 처리하는 영역
-finally
+finally : Exception이 발생하든 안하든 반드시 실행하는 영역
 throw
 throws
