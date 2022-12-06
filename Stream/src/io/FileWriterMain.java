@@ -12,7 +12,7 @@ public class FileWriterMain {
 		try {
 			//저장할 파일경로
 			//1. 노드 스트림 초기화
-			fw = new FileWriter("hello.txt");
+			fw = new FileWriter("hello.txt",true);
 			//2. 프로세스 스트림 초기화
 			pw = new PrintWriter(fw);
 			//3. 출력
