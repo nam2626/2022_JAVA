@@ -14,6 +14,7 @@ public class EventMain {
 			@Override
 			public void onClick(View view) {
 				System.out.println(view.name + " 버튼클릭 이벤트 발생");
+				//btn1.onClick();//같은 영역에 선언해 놓은 지역변수도 접근이 가능
 			}
 		});
 		btn2.onClick();
