@@ -14,7 +14,8 @@ public class View {
 	}
 
 	public void onClick() {
-		onClickListener.onClick(this);
+		if(onClickListener != null)
+			onClickListener.onClick(this);
 	}
 	
 	
