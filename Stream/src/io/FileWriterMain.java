@@ -10,8 +10,8 @@ public class FileWriterMain {
 		FileWriter fw = null;
 		PrintWriter pw = null;
 		try {
-			//저장할 파일경로
 			//1. 노드 스트림 초기화
+			//저장할 파일경로 , 추가모드
 			fw = new FileWriter("hello.txt",true);
 			//2. 프로세스 스트림 초기화
 			pw = new PrintWriter(fw);
