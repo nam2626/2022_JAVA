@@ -1,6 +1,6 @@
 package ramda;
 
-public class RamdaEx2 {
+public class LamdaEx2 {
 	public static void calc(int n1, int n2, Calcurator cal) {
 		System.out.println(cal.calc(n1, n2));
 	}
