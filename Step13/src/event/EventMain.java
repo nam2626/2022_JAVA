@@ -18,9 +18,19 @@ public class EventMain {
 			}
 		});
 		btn2.onClick();
+		
+		//btn3 클릭이벤트 람다식을 이용해서 이벤트 처리
+		btn3.setOnClickListener((v)->{
+			System.out.println(v.name + " 버튼 이벤트");
+		});
+		btn3.onClick();
 	}
 
 }
+
+
+
+
 
 
 
