@@ -1,6 +1,7 @@
 package inner;
 
 import inner.Outter.Inner;
+import inner.OutterStaticClass.InnerStaticClass;
 
 public class OutterMain {
 
@@ -12,6 +13,15 @@ public class OutterMain {
 		inClass = outClass.new Inner(40);
 		System.out.println(inClass.sum());
 		
+//		OutterStaticClass out = new OutterStaticClass(100);
+		OutterStaticClass.InnerStaticClass in = new OutterStaticClass.InnerStaticClass(200);
+		System.out.println(in.sum());
+		
+		
+		
 	}
 
 }
+
+
+
