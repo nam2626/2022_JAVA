@@ -26,7 +26,7 @@ public class FileReadMain {
 			e.printStackTrace();
 		}finally {
 			try {
-				br.close();
+				if(br != null) br.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
