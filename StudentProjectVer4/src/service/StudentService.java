@@ -34,7 +34,7 @@ public class StudentService {
 		//받아온 학생 객체를 리스트에 추가.
 		list.add(studentVO);
 		//파일에 내용 추가
-		try(FileOutputStream fos = new FileOutputStream("student.dat");
+		try(FileOutputStream fos = new FileOutputStream("student.dat",true);
 				ObjectOutputStream oos = new ObjectOutputStream(fos);){
 			oos.writeObject(studentVO);
 			oos.flush();
