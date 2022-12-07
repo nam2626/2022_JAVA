@@ -1,5 +1,9 @@
 package service;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import vo.StudentVO;
@@ -29,6 +33,16 @@ public class StudentService {
 	public void appendStudentVO(StudentVO studentVO) {
 		//받아온 학생 객체를 리스트에 추가.
 		list.add(studentVO);
+		//파일에 내용 추가
+		try(FileOutputStream fos = new FileOutputStream("student.dat");
+				ObjectOutputStream oos = new ObjectOutputStream(fos);){
+			oos.writeObject(studentVO);
+			oos.flush();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public StudentVO searchStudentVO(String studentNo) {
