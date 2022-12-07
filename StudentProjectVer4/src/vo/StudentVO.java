@@ -54,7 +54,7 @@ public class StudentVO implements Serializable {
 		return "StudentVO [studentNo=" + studentNo + ", studentName=" + studentName + ", majorName=" + majorName
 				+ ", score=" + score + "]";
 	}
-
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -64,5 +64,17 @@ public class StudentVO implements Serializable {
 		StudentVO other = (StudentVO) obj;
 		return Objects.equals(studentNo, other.studentNo);
 	}
-
+	
+	public String getData() {
+		return String.format("%s,%s,%s,%f", studentNo,studentName,majorName,score);
+	}
 }
+
+
+
+
+
+
+
+
+
