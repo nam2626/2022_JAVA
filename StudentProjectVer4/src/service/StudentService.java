@@ -1,8 +1,11 @@
 package service;
 
+import java.io.EOFException;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
@@ -13,10 +16,29 @@ public class StudentService {
 	private ArrayList<StudentVO> list;
 	
 	private StudentService() {
+		fileLoad();
+	}
+
+	private void fileLoad() {
 		list = new ArrayList<StudentVO>();
-		list.add(new StudentVO("1111", "김철수", "경제학과", 3.14));
-		list.add(new StudentVO("2222", "이영희", "경영학과", 2.44));
-		list.add(new StudentVO("3333", "박영수", "컴퓨터공학과", 4.24));
+		
+		try(FileInputStream fis = new FileInputStream("student.dat");
+			ObjectInputStream ois = new ObjectInputStream(fis);
+		){
+			while(true) {
+				StudentVO vo = (StudentVO) ois.readObject();
+				list.add(vo);
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("학생 데이터 파일이 없습니다.");
+		}catch (EOFException e) {
+			System.out.println("학생 데이터 파일 로드 완료");
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} 
+		
 	}
 
 	public static StudentService getInstance() {
