@@ -18,6 +18,7 @@ public class StudentMain {
 			System.out.println("   3. 학생정보 검색");
 			System.out.println("   4. 학생정보 삭제");
 			System.out.println("   5. 학생정보 수정");
+			System.out.println("   6. 학생정보 CSV로 내보내기");
 			System.out.println("   0. 프로그램 종료");
 			System.out.print("   원하시는 번호를 입력하세요 : ");
 			no = sc.nextInt(); sc.nextLine();

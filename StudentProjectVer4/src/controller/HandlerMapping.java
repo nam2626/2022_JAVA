@@ -31,6 +31,9 @@ public class HandlerMapping {
 		case 5:
 			controller = new StudentUpdateController();
 			break;
+		case 6:
+			controller = new ExportController();
+			break;
 		}
 		
 		return controller;
