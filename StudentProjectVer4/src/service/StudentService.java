@@ -23,8 +23,7 @@ public class StudentService {
 		list = new ArrayList<StudentVO>();
 		
 		try(FileInputStream fis = new FileInputStream("student.dat");
-			ObjectInputStream ois = new ObjectInputStream(fis);
-		){
+			ObjectInputStream ois = new ObjectInputStream(fis);){
 			while(true) {
 				StudentVO vo = (StudentVO) ois.readObject();
 				list.add(vo);
@@ -40,7 +39,20 @@ public class StudentService {
 		} 
 		
 	}
-
+	
+	public void fileSave() {
+		try(FileOutputStream fos = new FileOutputStream("student.dat");
+				ObjectOutputStream oos = new ObjectOutputStream(fos);){
+			
+			for(int i=0;i<list.size();i++)
+				oos.writeObject(list.get(i));
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	public static StudentService getInstance() {
 		if (instance == null)
 			instance = new StudentService();
@@ -56,15 +68,7 @@ public class StudentService {
 		//받아온 학생 객체를 리스트에 추가.
 		list.add(studentVO);
 		//파일에 내용 추가
-		try(FileOutputStream fos = new FileOutputStream("student.dat",true);
-				ObjectOutputStream oos = new ObjectOutputStream(fos);){
-			oos.writeObject(studentVO);
-			oos.flush();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		fileSave();
 	}
 
 	public StudentVO searchStudentVO(String studentNo) {

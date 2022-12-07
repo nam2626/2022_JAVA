@@ -28,6 +28,7 @@ public class StudentUpdateController implements Controller {
 			System.out.print("수정할 평점 : ");
 			String score = sc.nextLine();
 			vo.setScore(Double.parseDouble(score));
+			StudentService.getInstance().fileSave();
 			System.out.println("학생정보 수정이 완료되었습니다.");
 		} catch (StudentException e) {
 			System.out.println(e.getMessage());

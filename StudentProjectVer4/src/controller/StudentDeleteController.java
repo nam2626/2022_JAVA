@@ -14,9 +14,10 @@ public class StudentDeleteController implements Controller {
 		System.out.print("삭제할 학번 : ");
 		String studentNo = sc.nextLine();
 		//2. 삭제할 기능 실행 후 결과 출력
-		if(StudentService.getInstance().deleteStudentVO(new StudentVO(studentNo, null, null, 0)))
+		if(StudentService.getInstance().deleteStudentVO(new StudentVO(studentNo, null, null, 0))) {
+			StudentService.getInstance().fileSave();
 			System.out.println("학생 데이터 삭제 성공");
-		else
+		}else
 			System.out.println("학생 데이터 삭제 실패");
 	}
 
