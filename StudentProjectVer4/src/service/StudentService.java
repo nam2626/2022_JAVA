@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
+import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -95,7 +96,7 @@ public class StudentService {
 			content += list.get(i).getData() + "\n";
 		}
 		
-		try(FileWriter fw = new FileWriter(fileName);
+		try(FileWriter fw = new FileWriter(fileName,Charset.forName("EUC-KR"));
 				PrintWriter pw = new PrintWriter(fw);){
 			pw.print(content);
 			pw.flush();
