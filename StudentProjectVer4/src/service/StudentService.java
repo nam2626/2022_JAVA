@@ -4,10 +4,14 @@ import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import vo.StudentVO;
 
@@ -83,7 +87,21 @@ public class StudentService {
 	}
 	//csv로 학생 정보 내용 저장
 	public void exportCSV() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MM_dd_hh_mm_ss");
+		String fileName = sdf.format(Calendar.getInstance().getTime()) + "_student.csv";
 		
+		String content = new String();
+		for(int i=0;i<list.size();i++) {
+			content += list.get(i).getData() + "\n";
+		}
+		
+		try(FileWriter fw = new FileWriter(fileName);
+				PrintWriter pw = new PrintWriter(fw);){
+			pw.print(content);
+			pw.flush();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 }
