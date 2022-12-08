@@ -58,6 +58,19 @@ public class StudentService {
 			e.printStackTrace();
 		}
 	}
+	
+	public void printLog(String message) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		String date = sdf.format(Calendar.getInstance().getTime());
+		String log = String.format("%s\t%s", date,message);
+		try(FileWriter fw = new FileWriter("log.txt",true);
+			PrintWriter pw = new PrintWriter(fw);){
+			pw.println(log);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public static StudentService getInstance() {
 		if (instance == null)
 			instance = new StudentService();

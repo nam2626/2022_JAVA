@@ -33,8 +33,13 @@ public class StudentAppendController implements Controller {
 			System.out.println("학생 정보 등록을 성공하였습니다.");
 		} catch (StudentException e) {
 			System.out.println(e.getMessage());
+			StudentService.getInstance().printLog(e.getMessage());
 		}
 
 	}
 
 }
+
+
+
+
