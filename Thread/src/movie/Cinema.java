@@ -43,7 +43,17 @@ public class Cinema {
 		return false;
 	}
 	
-	
+	/*
+	 * 1 - 홍길동
+	 * 2 - 김철수
+	 * 3 - 빈좌석
+	 * ... 
+	 */
+	public void allSeatPrintInfo() {
+		for(int i=0;i<seat.length;i++) {
+			System.out.println(String.format("%d - %s", i+1, seat[i]));
+		}
+	}
 }
 
 
