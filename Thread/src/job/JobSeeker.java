@@ -15,6 +15,7 @@ public class JobSeeker extends Thread {
 				if(msg != null) {
 					System.out.println(msg + "는 " + getName()+"님이 수신하였습니다.");
 					System.out.println(getName() + " 구직자 지원 종료");
+					return;
 				}
 			}
 		} catch (InterruptedException e) {

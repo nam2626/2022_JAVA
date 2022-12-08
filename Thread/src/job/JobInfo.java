@@ -18,7 +18,7 @@ public class JobInfo {
 			wait();//스레드를 대기 상태로 만듬
 		msg = jobInfo;
 		jobInfo = null;
-		return msg;
+		return msg; 
 	}
 	
 	public synchronized void writeJob(String job) {
