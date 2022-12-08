@@ -40,6 +40,7 @@ public class Cinema {
 			return true;
 		}
 		System.out.println(name + " 손님 " + seatNo + "좌석 예매에 실패하셨습니다.") ;
+		
 		return false;
 	}
 	
@@ -51,7 +52,8 @@ public class Cinema {
 	 */
 	public void allSeatPrintInfo() {
 		for(int i=0;i<seat.length;i++) {
-			System.out.println(String.format("%d - %s", i+1, seat[i]));
+			System.out.println(String.format("%d - %s", i+1, 
+					(seat[i] == null ? "빈좌석" : seat[i])));
 		}
 	}
 }
