@@ -23,7 +23,16 @@ public class Cinema {
 		return instance;
 	}
 
-	
+	public boolean reservation(int seatNo, String name) {
+		
+		
+		return false;
+	}
 	
 	
 }
+
+
+
+
+
