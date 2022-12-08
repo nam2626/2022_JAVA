@@ -22,6 +22,7 @@ public class StudentPrintAllController implements Controller {
 
 		} catch (StudentException e) {
 			System.out.println(e.getMessage());
+			StudentService.getInstance().printLog(e.getMessage());
 		}
 	}
 

@@ -32,6 +32,7 @@ public class StudentUpdateController implements Controller {
 			System.out.println("학생정보 수정이 완료되었습니다.");
 		} catch (StudentException e) {
 			System.out.println(e.getMessage());
+			StudentService.getInstance().printLog(e.getMessage());
 		}catch (NumberFormatException e) {
 			System.out.println("잘못된 데이터를 입력했습니다.");
 		}
