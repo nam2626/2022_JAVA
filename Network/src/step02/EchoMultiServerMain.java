@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.ServerSocket;
 import java.net.Socket;
 
 public class EchoMultiServerMain {
@@ -32,6 +33,26 @@ public class EchoMultiServerMain {
 	}
 	
 	public static void main(String[] args) {
+		ServerSocket server = null;
+	
+		try {
+			server = new ServerSocket(1234);
+			while(true) {
+				System.out.println("클라이언트 접속 대기중........");
+				Socket client = server.accept();
+				System.out.println(client.getInetAddress() + "에서 접속했습니다.");
+				ServerWorker worker = new ServerWorker(client);
+				worker.start();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (server != null) server.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 
 	}
 
