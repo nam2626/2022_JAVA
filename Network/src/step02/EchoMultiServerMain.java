@@ -10,17 +10,14 @@ public class EchoMultiServerMain {
 	
 	private static class ServerWorker extends Thread{
 		private Socket client;
-		
 		public ServerWorker(Socket client) {
 			this.client = client;
 		}
-
 		@Override
 		public void run() {
 			try(BufferedReader br = new BufferedReader(
 					new InputStreamReader(client.getInputStream()));
 					PrintWriter pw = new PrintWriter(client.getOutputStream());){
-				
 				while(true) {
 					String str = br.readLine();
 					if(str.equals("exit")) break;
@@ -30,6 +27,7 @@ public class EchoMultiServerMain {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			System.out.println(client.getInetAddress() +"에서 접속을 종료했습니다.");
 		}
 	}
 	
