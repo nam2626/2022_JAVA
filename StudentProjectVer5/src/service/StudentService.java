@@ -3,6 +3,7 @@ package service;
 import java.util.ArrayList;
 
 import dao.StudentDAO;
+import exception.StudentException;
 import vo.StudentVO;
 
 public class StudentService {
@@ -27,7 +28,7 @@ public class StudentService {
 	}
 
 	//학생정보 추가
-	public void insertStudentVO(StudentVO studentVO) {
+	public void insertStudentVO(StudentVO studentVO) throws StudentException {
 		//DAO에 받아온 학생 객체를 보냄
 		StudentDAO.getInstance().insertStudent(studentVO);
 	}
