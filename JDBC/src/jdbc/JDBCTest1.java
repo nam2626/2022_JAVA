@@ -22,7 +22,8 @@ public class JDBCTest1 {
 			//5. SQL Excute
 			ResultSet rs = stmt.executeQuery(sql);
 			while(rs.next()) {
-				System.out.println(rs.getString(1));
+				System.out.println(rs.getString(1) + " " + rs.getString(2)
+				+ " " + rs.getInt(3) + " " + rs.getDouble(4));
 			}
 			//6. Close
 			rs.close();
