@@ -6,7 +6,7 @@ import exception.StudentException;
 import service.StudentService;
 import vo.StudentVO;
 
-public class StudentAppendController implements Controller {
+public class StudentInsertController implements Controller {
 
 	@Override
 	public void execute(Scanner sc) {
@@ -21,14 +21,14 @@ public class StudentAppendController implements Controller {
 
 			System.out.print("등록할 이름 : ");
 			String studentName = sc.nextLine();
-			System.out.print("등록할 학과명 : ");
-			String majorName = sc.nextLine();
+			System.out.print("등록할 학과번호 : ");
+			int majorNo = sc.nextInt();sc.nextLine();
 			System.out.print("등록할 평점 : ");
 			double score = sc.nextDouble();
 			sc.nextLine();
 
 			StudentService.getInstance().
-				appendStudentVO(new StudentVO(studentNo, studentName, majorName, score));
+				appendStudentVO(new StudentVO(studentNo, studentName, majorNo, score));
 
 			System.out.println("학생 정보 등록을 성공하였습니다.");
 		} catch (StudentException e) {

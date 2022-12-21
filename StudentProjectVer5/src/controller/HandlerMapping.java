@@ -17,7 +17,7 @@ public class HandlerMapping {
 		
 		switch(no) {
 		case 1:
-			controller = new StudentAppendController();
+			controller = new StudentInsertController();
 			break;
 		case 2:
 			controller = new StudentPrintAllController();
