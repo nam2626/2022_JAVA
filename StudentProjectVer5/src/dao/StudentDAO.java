@@ -37,6 +37,8 @@ public class StudentDAO {
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			throw new StudentException("회원정보 등록 실패");
+		}finally {
+			DBManager.getInstance().close(null, pstmt);
 		}
 		
 	}
