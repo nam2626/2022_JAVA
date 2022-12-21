@@ -2,6 +2,7 @@ package jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -19,7 +20,14 @@ public class JDBCTest1 {
 			//4. State Create
 			Statement stmt = conn.createStatement();
 			//5. SQL Excute
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				System.out.println(rs.getString(1));
+			}
 			//6. Close
+			rs.close();
+			stmt.close();
+			conn.close();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
