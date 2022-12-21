@@ -22,8 +22,13 @@ public class JDBCTest1 {
 			//5. SQL Excute
 			ResultSet rs = stmt.executeQuery(sql);
 			while(rs.next()) {
-				System.out.println(rs.getString(1) + " " + rs.getString(2)
-				+ " " + rs.getInt(3) + " " + rs.getDouble(4));
+				/*
+				 * System.out.println(rs.getString(1) + " " + rs.getString(2) + " " +
+				 * rs.getDouble(3) + " " + rs.getInt(4));
+				 */
+				System.out.println(rs.getString("student_no") + " " 
+				 + rs.getString("student_name")
+				+ " " + rs.getDouble("score") + " " + rs.getInt("major_no"));
 			}
 			//6. Close
 			rs.close();
