@@ -28,7 +28,7 @@ public class StudentInsertController implements Controller {
 			sc.nextLine();
 
 			StudentService.getInstance().
-				appendStudentVO(new StudentVO(studentNo, studentName, majorNo, score));
+				insertStudentVO(new StudentVO(studentNo, studentName, majorNo, score));
 
 			System.out.println("학생 정보 등록을 성공하였습니다.");
 		} catch (StudentException e) {

@@ -2,6 +2,7 @@ package service;
 
 import java.util.ArrayList;
 
+import dao.StudentDAO;
 import vo.StudentVO;
 
 public class StudentService {
@@ -26,9 +27,9 @@ public class StudentService {
 	}
 
 	//학생정보 추가
-	public void appendStudentVO(StudentVO studentVO) {
-		//받아온 학생 객체를 리스트에 추가.
-		list.add(studentVO);
+	public void insertStudentVO(StudentVO studentVO) {
+		//DAO에 받아온 학생 객체를 보냄
+		StudentDAO.getInstance().insertStudent(studentVO);
 	}
 
 	public StudentVO searchStudentVO(String studentNo) {
