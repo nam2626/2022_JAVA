@@ -19,7 +19,7 @@ public class StudentSearchController implements Controller {
 		if(vo == null)
 			System.out.println("검색 결과가 없습니다.");
 		else
-			System.out.println(vo);
+			vo.printInfo();
 		
 	}
 

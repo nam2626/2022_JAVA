@@ -11,13 +11,13 @@ public class StudentPrintAllController implements Controller {
 
 	@Override
 	public void execute(Scanner sc) {
-		ArrayList<StudentVO> list = StudentService.getInstance().getList();
+		ArrayList<StudentVO> list = StudentService.getInstance().selectAllStudentVO();
 		try {
 			if (list.isEmpty())
 				throw new StudentException("출력할 데이터가 하나도 없습니다.");
 			
 			for (StudentVO vo : list) {
-				System.out.println(vo);
+				vo.printInfo();
 			}
 
 		} catch (StudentException e) {

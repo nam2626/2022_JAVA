@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import config.DBManager;
 import exception.StudentException;
@@ -91,6 +92,31 @@ public class StudentDAO {
 		}
 		
 		return vo;
+	}
+
+	public ArrayList<StudentVO> selectAllStudentVO() {
+		String sql = "SELECT s.STUDENT_NO , s.STUDENT_NAME ,m.MAJOR_NAME ,s.SCORE "
+				+ "FROM STUDENT s, MAJOR m "
+				+ "WHERE s.MAJOR_NO  = m.MAJOR_NO";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<StudentVO> list = new ArrayList<StudentVO>();
+		try {
+			pstmt = DBManager.getInstance().getConn().prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				list.add(new StudentVO(rs.getString(1), rs.getString(2),
+						rs.getString(3), rs.getDouble(4)));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.getInstance().close(rs, pstmt);
+		}
+
+		return list;
 	}
 
 }
