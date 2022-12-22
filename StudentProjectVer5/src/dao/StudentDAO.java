@@ -119,6 +119,30 @@ public class StudentDAO {
 		return list;
 	}
 
+	public void updateStudentVO(StudentVO vo) throws StudentException {
+		Connection conn = DBManager.getInstance().getConn();
+
+		String sql = "update student set student_name = ?, major_no = ? "
+				+ "score = ? where student_no = ?";
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getStudentName());
+			pstmt.setInt(2, vo.getMajorNo());
+			pstmt.setDouble(3, vo.getScore());
+			pstmt.setString(4, vo.getStudentNo());
+
+			if(pstmt.executeUpdate()==0)
+				throw new StudentException("학생정보 수정 실패");
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			throw new StudentException("학생정보 수정 실패");
+		} finally {
+			DBManager.getInstance().close(null, pstmt);
+		}
+	}
+
 }
 
 

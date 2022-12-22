@@ -36,6 +36,10 @@ public class StudentService {
 		return StudentDAO.getInstance().selectAllStudentVO();
 	}
 
+	public void updateStudentVO(StudentVO vo) throws StudentException{
+		StudentDAO.getInstance().updateStudentVO(vo);
+	}
+
 }
 
 
