@@ -40,6 +40,10 @@ public class StudentService {
 		StudentDAO.getInstance().updateStudentVO(vo);
 	}
 
+	public ArrayList<StudentVO> selectTop3StudentVO() {
+		return StudentDAO.getInstance().selectTop3StudentVO();
+	}
+
 }
 
 

@@ -143,6 +143,33 @@ public class StudentDAO {
 		}
 	}
 
+	public ArrayList<StudentVO> selectTop3StudentVO() {
+		String sql = "SELECT * FROM "
+				+ "(SELECT RANK() over(ORDER BY s.score DESC) AS RANK_NO,"
+				+ " s.STUDENT_NO ,s.STUDENT_NAME , m.MAJOR_NAME"
+				+ " , s.SCORE  FROM STUDENT s, MAJOR m "
+				+ "WHERE s.MAJOR_NO = m.MAJOR_NO) WHERE RANK_NO <= 3";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<StudentVO> list = new ArrayList<StudentVO>();
+		try {
+			pstmt = DBManager.getInstance().getConn().prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				list.add(new StudentVO(rs.getString(2), rs.getString(3),
+						rs.getString(4), rs.getDouble(5)));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.getInstance().close(rs, pstmt);
+		}
+
+		return list;
+	}
+
 }
 
 
