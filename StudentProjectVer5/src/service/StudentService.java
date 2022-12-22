@@ -34,7 +34,8 @@ public class StudentService {
 	}
 
 	public StudentVO searchStudentVO(String studentNo) {
-		return null;
+		//받아온 학번을 DAO에 보내서 학번 기준으로 조회한 결과를 받음
+		return StudentDAO.getInstance().selectStudentVO(studentNo);
 	}
 
 	public void deleteStudentVO(String studentNo) throws StudentException {

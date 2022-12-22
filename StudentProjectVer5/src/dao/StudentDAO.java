@@ -2,6 +2,7 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import config.DBManager;
@@ -66,4 +67,37 @@ public class StudentDAO {
 
 	}
 
+	public StudentVO selectStudentVO(String studentNo) {
+		String sql = "SELECT s.STUDENT_NO , s.STUDENT_NAME ,m.MAJOR_NAME ,s.SCORE "
+				+ "FROM STUDENT s, MAJOR m "
+				+ "WHERE s.MAJOR_NO  = m.MAJOR_NO  AND s.STUDENT_NO  = ?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		StudentVO vo = null;
+		try {
+			pstmt = DBManager.getInstance().getConn().prepareStatement(sql);
+			pstmt.setString(1, studentNo);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				vo = new StudentVO(rs.getString(1), rs.getString(2),
+						rs.getString(3), rs.getDouble(4));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.getInstance().close(rs, pstmt);
+		}
+		
+		return vo;
+	}
+
 }
+
+
+
+
+
+
+
